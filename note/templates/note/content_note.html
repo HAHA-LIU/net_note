@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看云笔记内容</title>
+</head>
+<body>
+    <form action="/note/con/{{ note.id }}" method="get">
+        {% csrf_token %}
+    <p>
+        标题: <input type="text" name="title" value="{{ note.title }}" disabled>
+<!--        <input type="submit" value="保存">-->
+        <a href="/note/">返回笔记列表</a>
+    </p>
+    <p>
+        <textarea name="content" cols="30" rows="10" disabled>{{ note.content }}</textarea>
+    </p>
+</form>
+</body>
+</html>
